@@ -53,7 +53,7 @@ export default function Image() {
             {isLoading && <p>Loading...</p>}
             {image && (
                 <img
-                    className="mt-4"
+                    className="mt-4 rounded-lg"
                     src={image}
                     alt={prompt}
                     width={256}
