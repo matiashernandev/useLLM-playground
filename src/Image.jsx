@@ -17,6 +17,12 @@ export default function Image() {
         setIsLoading(false);
     }
 
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+            handleGenerateClick(e);
+        }
+    };
+
     return (
         <div className=" flex flex-col items-center max-w-4xl w-full mx-auto my-4">
             <h1 className="font-medium text-4xl text-center">
@@ -29,6 +35,7 @@ export default function Image() {
                     placeholder="Enter a prompt here"
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
+                    onKeyDown={handleKeyDown}
                 />
                 <button
                     onClick={handleGenerateClick}
