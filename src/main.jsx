@@ -6,7 +6,9 @@ import Record from "./Record.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <Record />
-        <App />
+        <div className="container m-auto  flex flex-col gap-10 items-center justify-center">
+            <Record />
+            <App />
+        </div>
     </React.StrictMode>
 );

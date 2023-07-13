@@ -1,8 +1,7 @@
-"use client";
 import useLLM from "usellm";
 import { useState } from "react";
 
-export default function AudioRecorder() {
+export default function Record() {
     const [audioUrl, setAudioUrl] = useState("");
     const [transcript, setTranscript] = useState("");
     const [status, setStatus] = useState("");
@@ -28,11 +27,28 @@ export default function AudioRecorder() {
     };
 
     return (
-        <div style={{ maxWidth: 320, margin: "32px auto" }}>
-            <h1>Audio Transcription Demo</h1>
-            <button onClick={startRecording}>Record</button>
-            <button onClick={stopRecording}>Stop</button>
-            <button onClick={transcribe}>Transcribe</button>
+        <div className="flex flex-col items-center gap-3">
+            <h2 className="text-4xl">Audio Transcription Demo</h2>
+            <div className="flex gap-3">
+                <button
+                    className="py-2 px-4  bg-lime-600 hover:bg-lime-700 focus:ring-lime-500 focus:ring-offset-lime-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    onClick={startRecording}
+                >
+                    Record
+                </button>
+                <button
+                    className="py-2 px-4  bg-red-600 hover:bg-red-700 focus:ring-red-500 focus:ring-offset-red-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    onClick={stopRecording}
+                >
+                    Stop
+                </button>
+                <button
+                    className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    onClick={transcribe}
+                >
+                    Transcribe
+                </button>
+            </div>
             <p>{status}</p>
             {audioUrl && <audio src={audioUrl} controls />}
             {transcript && <p>Transcript: {transcript}</p>}
