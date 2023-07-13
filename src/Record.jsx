@@ -28,7 +28,7 @@ export default function Record() {
 
     return (
         <div className="flex flex-col items-center gap-3">
-            <h2 className="text-4xl font-bold mb-3">
+            <h2 className="text-4xl font-bold my-3">
                 Audio Transcription Demo
             </h2>
             <div className="flex gap-3">

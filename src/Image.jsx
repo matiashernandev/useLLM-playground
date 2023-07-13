@@ -28,11 +28,13 @@ export default function Image() {
     };
 
     return (
-        <div className=" flex flex-col items-center max-w-4xl w-full mx-auto my-4">
+        <div className=" flex flex-col gap-3 items-center max-w-4xl w-full mx-auto my-4">
             <h1 className="font-medium text-4xl text-center">
                 Image Generation Demo
             </h1>
-            <p>{example}</p>
+            <p style={{ textWrap: "balance", textAlign: "center" }}>
+                {example}
+            </p>
             <div className="flex mt-4">
                 <input
                     className="px-3 rounded-lg"

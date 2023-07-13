@@ -7,7 +7,7 @@ import Image from "./Image.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <div className="container m-auto  flex flex-col gap-10 items-center justify-center">
+        <div className="container m-auto px-5 flex flex-col gap-10 items-center justify-center">
             <Record />
             <App />
             <Image />
