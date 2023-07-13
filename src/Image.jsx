@@ -4,6 +4,9 @@ import { useState } from "react";
 export default function Image() {
     const [prompt, setPrompt] = useState("");
     const [image, setImage] = useState("");
+    const [example, setExample] = useState(
+        "Claymation art of a old man playing guitar, 100mm, candle lightning, industrial colours, extremely detailed"
+    );
     const [isLoading, setIsLoading] = useState(false);
     const llm = useLLM({ serviceUrl: "https://usellm.org/api/llm" });
 
@@ -12,6 +15,7 @@ export default function Image() {
         setPrompt("");
         e.preventDefault();
         setImage("");
+        setExample(prompt);
         const { images } = await llm.generateImage({ prompt });
         setImage(images[0]);
         setIsLoading(false);
@@ -28,6 +32,7 @@ export default function Image() {
             <h1 className="font-medium text-4xl text-center">
                 Image Generation Demo
             </h1>
+            <p>{example}</p>
             <div className="flex mt-4">
                 <input
                     className="px-3 rounded-lg"
